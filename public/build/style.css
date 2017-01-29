@@ -1,0 +1,39 @@
+.header {
+  font-family: 'Alfa Slab One', cursive;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.spot {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.show {
+  background: yellow;
+}
+
+.spot:hover
+{
+box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+-webkit-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+-moz-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+-o-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+}
+
+.clicked {
+  background: blue;
+}
