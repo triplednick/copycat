@@ -1,9 +1,45 @@
-.header {
-  font-family: 'Alfa Slab One', cursive;
+body {
+  background: rgba(110, 151, 131, 0.4);
 }
 
-p {
+.header-container {
+  margin-bottom: -35px;
+  text-align: center;
+}
+
+.header {
+  font-size: 2.8em;
+  font-family: 'Alfa Slab One', cursive;
+  color: #093B23;
+}
+
+button, .highscore {
   font-family: 'Lato', sans-serif;
+}
+
+.myButton {
+	background-color: rgb(26, 84, 56);
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #fffaff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+	background-color:#56758a;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
 }
 
 .parent-container {
@@ -15,25 +51,118 @@ p {
   display: flex;
   flex-direction: row;
 }
+
 .spot {
-  height: 50px;
-  width: 50px;
-  margin: 5px;
-  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+  margin: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+}
+
+div#resetBtn {
+  width: 48%;
+  text-align: right;
+  margin-top: 7px;
+  padding-right: 5px;
+}
+
+.highscore-container {
+  width: 48%;
+  margin: auto 0 auto 0;
+  font-size: 1.4em;
+}
+
+.highscore {
+  margin-left: 10px;
+  color: #093B23;
+}
+
+.instructions-text, .instructions-header {
+  width: 47%;
+}
+
+@media only screen and (max-width : 480px) {
+
+  div.header-container {
+    margin-bottom: -10px;
+  }
+  span.highscore {
+    font-size: .8em;
+  }
+  div.header-container .header {
+    font-size: 2.0em;
+  }
+
+  div.spot {
+    height: 80px;
+    width: 80px;
+    margin: 5px;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
+  }
+
+  div#resetBtn a {
+    background-color: rgb(26, 84, 56);
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #fffaff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:5px 16px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+  }
+
+  div#resetBtn a:hover {
+    background-color:#56758a;
+  }
+
+  div#resetBtn a:active {
+    position:relative;
+    top:1px;
+  }
+}
+
+@media only screen and (min-width : 481px) and (max-width : 900px) {
+  
+  div.header-container {
+    margin-bottom: -10px;
+  }
+
+  div.header-container .header {
+    font-size: 2.5em;
+  }
+
+  div.spot {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+  }
 }
 
 .show {
-  background: yellow;
+  background:rgba(46, 204, 113, 0.4);
 }
 
 .spot:hover
 {
-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
--webkit-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
--moz-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
--o-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+  box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+  -webkit-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+  -moz-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
+  -o-box-shadow: inset 0px 0px 42px -86px #ABABAB,0px 0px 18px -5px #242424;
 }
 
 .clicked {
-  background: blue;
+  background: rgba(241, 196, 15, 0.3);
 }

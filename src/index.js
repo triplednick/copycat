@@ -123,22 +123,30 @@ const showPattern = () => {
         }
       }, time);  
     
-      setTimeout(function(){
+      setTimeout(function() {
         const id = 'spot-' + val;
         let curEl = document.getElementById(id);
         curEl.classList.toggle('show');
         
         if(index === (currentPattern.length - 1)) {
-          console.log('setting user turn now');
           store.dispatch(updateUserTurn(true));
+          setTimeout(function(){
+            swal('Your turn!');
+          }, 500);
         }
       },time+500);
-    
   });
 };
 
 const setupBoard = () => {
   
+  /*
+  if(localStorage.highScore) {
+    document.getElementById('highscore').textContent = 'High score: ' + localStorage.highScore;
+  }else {
+    document.getElementById('highscore').textContent = 'High score: ' + 1;
+  }
+  */
   document.getElementById('resetBtn').addEventListener('click', function(){
     reset();
   });
@@ -155,12 +163,11 @@ const setupBoard = () => {
     });
     
     el.addEventListener('click', function(e) {
+      
       el.classList.toggle('clicked');
       const state = store.getState();
       const currentPatternValue = store.getState().currentPattern[store.getState().userIndex].toString();
-    console.log('clicked: ' + id + ' expected ' + currentPatternValue);
-      //console.log('state on click: ');
-      //console.log({ state });
+      
       if(state.userTurn) {
         const state = store.getState();
         
@@ -169,9 +176,7 @@ const setupBoard = () => {
 
         if(currentPatternValue.trim() === id.trim()) {
           
-          //console.log('right pick');       
           if(state.userIndex === state.currentPattern.length -1 ) {
-            //console.log('you win round');
             swal("You won!", "Get ready for round " + (level + 1), "success");
             //increment level
             store.dispatch(updateLevel(level + 1));
@@ -195,8 +200,21 @@ const setupBoard = () => {
           
           
         }else {
+
+          const highScore = localStorage.highScore;
+          
+          if(highScore) {
+            if(highScore < level ) {
+              localStorage.highScore = level;
+            }
+            localStorage.highScore = store.getState().level;
+            
+          }else {
+            localStorage.highScore = store.getState().level;
+          }
+
           swal({
-            title: "You lost :(",
+            title: "You loss!",
             text: "Would you like to play again?",
             type: "warning",
             showCancelButton: true,
