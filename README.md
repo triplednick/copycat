@@ -4,7 +4,7 @@ As you progress through the game, the patterns get longer.
 
 ## Motivation
 
-I wanted to implement this project as a way to try and create a game that provides a cool user experience while also giving me
+I wanted to implement this project as a way to create a game that provides a cool user experience, while also giving me
 the ability to leverage some tools I have been learning like Redux.
 
 ## Installing Dependencies.
@@ -14,7 +14,7 @@ This is a node project, so after cloning or downloading this project, run this c
 npm install
 ```
 
-## Dependencies
+## Command Line Global Dependencies
 It helps your development workflow to have gulp installed globally. Install it by running this command:
 
 ```
