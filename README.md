@@ -1,6 +1,6 @@
 ## Copycat
 This project is a pattern matching web application. The application will display a pattern, and then ask you to repeat it back. 
-As you get a pattern correct, the patterns get longer and longer. 
+As you progress through the game, the patterns get longer.
 
 ## Motivation
 
